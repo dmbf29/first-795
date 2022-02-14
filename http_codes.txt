@@ -1,0 +1,16 @@
+# Success
+200 - OK (successful)
+201 - Created
+
+# Redirects
+301 - Permanent
+302 - Temp
+
+# Client/User screwed up
+401 - Not Authorized (i dont know who you are aka not logged in)
+403 - Not Authenticated (i know who you are, but you cant do this)
+404 - Not Found
+
+
+# Dev screwed up
+500 - Server Error

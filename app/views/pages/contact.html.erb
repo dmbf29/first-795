@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Contact</h1>
+
+  <!-- action => path -->
+  <!-- method => http verb -->
+  <!-- searching through team members -->
+  <!-- sending info from the view into the controller -->
+  <form action="/contact" method="get">
+    <!-- what is the name of an input??? -->
+    <!-- the name will be the KEY in our params -->
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, 'abcd' %>
+    <input type="text" name="member" value="<%= params[:member] %>" placeholder="enter name">
+    <input type="submit" class="btn btn-primary">
+  </form>
+
+
+  <ol>
+    <% if @members.any? %>
+      <% @members.each do |member| %>
+        <li><%= member.capitalize %></li>
+      <% end %>
+    <% else %>
+      <li>No members found with <%= params[:member] %></li>
+    <% end %>
+  </ol>
+
+  <%= link_to "Home", root_path  %>
+</div>
